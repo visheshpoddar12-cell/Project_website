@@ -1,0 +1,5 @@
+/* App-level resets — all styles live in index.css and component <style> blocks */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
