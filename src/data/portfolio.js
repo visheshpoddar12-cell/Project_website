@@ -2,92 +2,104 @@ export const personal = {
   name: "Vishesh Poddar",
   firstName: "Vishesh",
   lastName: "Poddar",
-  title: "Economics & Finance · Data Science",
-  email: "yashovardhansaraswat26@gmail.com",
+  title: "Finance, Economics & Data Science",
+  email: "vishesh.poddar@mail.utoronto.ca",
   linkedin: "https://linkedin.com/in/visheshpoddar",
   github: "https://github.com/visheshpoddar",
-  university: "Your University",
-  degree: "B.S. Economics & Finance",
-  graduation: "May 2026",
-  gpa: "3.8",
-  location: "New York, NY",
-  heroHeadline: "Quantitative Thinking at the Intersection of Finance and Data.",
+  university: "University of Toronto (Rotman Commerce)",
+  degree: "B.Comm., Finance and Economics Specialist",
+  graduation: "Class of 2028",
+  gpa: "3.96",
+  location: "Toronto, ON",
+  heroHeadline: "Equity research, stock pitching, and data-driven finance.",
   heroSub:
-    "I combine economic theory, financial modeling, and data science to analyze markets, evaluate investments, and turn complex data into clear decisions.",
+    "I combine finance, economics, and analytics to build investment theses, compete in stock pitch challenges, and communicate complex ideas with clarity.",
   aboutP1:
-    "I am a rising junior at [University], studying Economics and Finance with a concentration in quantitative methods and data analysis. My work sits at the intersection of financial theory and applied analytics — I use Python, statistical modeling, and econometric techniques to investigate the questions that interest me most: what drives market prices, how capital flows through economies, and where data reveals what fundamentals cannot.",
+    "I am a Finance and Economics Specialist at the University of Toronto’s Rotman Commerce, focused on equity research, valuation, and competitive finance work. My background includes modeling investment opportunities, developing pitch decks, and analyzing markets through the lens of both fundamentals and data.",
   aboutP2:
-    "Outside the classroom, I write equity research and macroeconomic analysis, build financial models for industry projects, and participate in case competitions focused on investment strategy and corporate valuation. I am actively looking for opportunities where rigorous analysis and business judgment are equally valued.",
+    "I have placed in top finance competitions like Fidelity Stock Pitch and UTCC Case Comp, supported investment decisions at Ranger Equity Investments, and produced pitch-ready research deliverables in Excel, PowerPoint, and written reports. I’m looking for opportunities that value rigorous analysis, teamwork, and real-world investment insight.",
 };
 
 export const stats = [
-  { value: "3.8", label: "GPA" },
-  { value: "10+", label: "Projects" },
-  { value: "6+", label: "Research Pieces" },
-  { value: "3", label: "Internships" },
+  { value: "3.96", label: "CGPA" },
+  { value: "8+", label: "Competitions" },
+  { value: "20+", label: "Research Reports" },
+  { value: "4", label: "Internships" },
 ];
 
 export const education = [
   {
-    institution: "Your University",
-    degree: "B.S. Economics & Finance",
-    concentration: "Quantitative Methods & Data Science",
-    dates: "Aug 2022 – May 2026",
-    gpa: "3.8 / 4.0",
-    honors: ["Dean's List — Fall 2022, Spring 2023, Fall 2023", "Merit Scholarship Recipient"],
+    institution: "University of Toronto (Rotman Commerce)",
+    degree: "B.Comm., Finance and Economics Specialist",
+    concentration: "Finance, Economics & Data Science",
+    dates: "Aug 2024 – Apr 2028",
+    gpa: "3.96 / 4.00",
+    honors: [
+      "International Scholar ($100,000)",
+      "Dean’s List Scholar",
+      "The Professor William Kingston and Dr John Kingston Scholarship",
+    ],
     coursework: [
-      "Econometrics",
       "Financial Modeling",
       "Corporate Finance",
+      "Econometrics",
       "Investment Analysis",
-      "Macroeconomics",
+      "Data Science for Finance",
+      "Capital Markets",
       "Statistical Methods",
-      "Derivatives & Options",
-      "Game Theory",
-      "Data Analysis",
-      "Behavioral Finance",
-      "Fixed Income",
-      "Financial Accounting",
+      "Macro Finance",
     ],
   },
 ];
 
 export const experience = [
   {
-    title: "Equity Research Intern",
-    company: "XYZ Capital",
-    location: "New York, NY",
+    title: "Equity Research Associate",
+    company: "Ranger Equity Investments",
+    location: "Toronto, ON",
+    dates: "Jan 2026 – Present",
+    bullets: [
+      "Conducted company and industry analysis using Bloomberg and Capital IQ to evaluate competitive position, cash flow strength, and market trends.",
+      "Built interconnected Excel models including DCF, comparable company, and precedent transaction analyses; authored 20+ page investment reports.",
+      "Monitored market developments and delivered weekly news summaries to support portfolio decisions.",
+    ],
+    tags: ["Excel", "Bloomberg", "Capital IQ", "DCF", "Equity Research"],
+  },
+  {
+    title: "Finance and Operations Assistant",
+    company: "Toronto 2025 AI Conference, BMO Lab @ UofT",
+    location: "Toronto, ON",
+    dates: "Aug 2025 – Dec 2025",
+    bullets: [
+      "Coordinated logistics for 1,000+ attendees and 15 international speakers, including travel, lodging, and venue support.",
+      "Managed stakeholder relationships across sponsors, speakers, and university teams to deploy a $150,000 operating budget on schedule.",
+      "Executed event-day operations, ticketing, registration, and panel moderation support for a two-day interdisciplinary conference.",
+    ],
+    tags: ["Operations", "Event Management", "Stakeholder Coordination", "Budget Management"],
+  },
+  {
+    title: "Investment Analyst Intern",
+    company: "Thinkuvate",
+    location: "Singapore",
+    dates: "May 2025 – Jul 2025",
+    bullets: [
+      "Evaluated business potential and macroeconomic drivers for 8 startups across DeepTech and growth-stage industries.",
+      "Prepared due diligence materials that supported funding conversations for roughly $2M in capital deployment.",
+      "Spearheaded research for a new DeepTech fund, benchmarking investment opportunities and synthesizing findings into investor-ready presentations.",
+    ],
+    tags: ["Market Research", "Due Diligence", "Pitch Decks", "Fund Strategy"],
+  },
+  {
+    title: "Equity Analyst Intern",
+    company: "Foord Asset Management",
+    location: "Singapore",
     dates: "Jun 2024 – Aug 2024",
     bullets: [
-      "Analyzed 12 companies across the consumer discretionary sector using DCF and comparable company analysis; presented findings to a team of 6 analysts.",
-      "Built a Python-based data pipeline aggregating financial statement data from SEC EDGAR, reducing manual reporting time by 40%.",
-      "Assisted in preparing weekly equity research summaries covering earnings, macro developments, and sector rotations distributed to 30+ portfolio managers.",
+      "Built a buy/sell recommendation for Cummins (NYSE: CMI) using financial modeling and qualitative analysis.",
+      "Predicted 30% upside within six months based on valuation, macro setup, and execution risk review.",
+      "Created an ESG decision-making tool using Bloomberg data that reduced portfolio review time by 80%.",
     ],
-    tags: ["Python", "Excel", "Bloomberg", "DCF", "Equity Research"],
-  },
-  {
-    title: "Corporate Finance Analyst (Part-time)",
-    company: "ABC Consulting",
-    location: "Remote",
-    dates: "Jan 2024 – May 2024",
-    bullets: [
-      "Developed three-statement financial models for 4 mid-market client engagements in healthcare and technology sectors.",
-      "Automated monthly performance reporting using SQL and Excel, eliminating 8 hours of manual work per reporting cycle.",
-      "Contributed to a market entry analysis report for a $50M capital allocation decision.",
-    ],
-    tags: ["SQL", "Excel", "Financial Modeling", "Valuation"],
-  },
-  {
-    title: "Data Analytics Intern",
-    company: "DEF Analytics",
-    location: "Mumbai, India",
-    dates: "May 2023 – Jul 2023",
-    bullets: [
-      "Designed a regression model in Python to identify leading indicators for customer churn, achieving 0.79 AUC on out-of-sample data.",
-      "Built interactive Tableau dashboards for operational KPIs used in weekly executive reviews.",
-      "Processed and cleaned 500K+ row datasets across 3 business lines for quarterly reporting.",
-    ],
-    tags: ["Python", "Tableau", "SQL", "Regression", "Pandas"],
+    tags: ["Equity Research", "Financial Modeling", "ESG", "Excel"],
   },
 ];
 
@@ -214,6 +226,112 @@ export const projects = [
     tools: ["Python", "HuggingFace", "FinBERT", "NLTK", "Pandas"],
     github: "#",
     demo: null,
+  },
+];
+
+export const stockPitches = [
+  {
+    title: "ABM Industries",
+    date: "10 May 2026",
+    competition: false,
+    position: "",
+    reportUrl: "/pdfs/ABM Industries Memo.pdf",
+    modelUrl: "/pdfs/models/ABM Industries model.xlsx",
+  },
+  {
+    title: "Perplexity Computer's Stock Pitch Competition",
+    date: "8 April 2026",
+    competition: true,
+    position: "Honorable mention (Top 70 out of 1400+)",
+    websiteUrl: "https://www.perplexity.ai/computer/a/parker-hannifin-sell-pitch-IjzJ0i9qRSqOSok078lGhg",
+  },
+  {
+    title: "Reitmans",
+    date: "20 February 2026",
+    competition: false,
+    position: "",
+    pitchUrl: "/pdfs/Reitmans Pitch.pdf",
+  },
+  {
+    title: "Parker Hannifin",
+    date: "15 January 2026",
+    competition: false,
+    position: "",
+    pitchUrl: "/pdfs/Parker Hannifin.pdf",
+  },
+  {
+    title: "Canada Goose",
+    date: "20 November 2025",
+    competition: false,
+    position: "",
+    pitchUrl: "/pdfs/Canada Goose.pdf",
+  },
+  {
+    title: "Levi’s",
+    date: "25 October 2025",
+    competition: true,
+    position: "Pre-finalist",
+    pitchUrl: "/pdfs/Levi's.pdf",
+  },
+  {
+    title: "ASML",
+    date: "20 June 2025",
+    competition: true,
+    position: "",
+    pitchUrl: "/pdfs/ASML Stock Pitch.pdf",
+  },
+  {
+    title: "Canadian National Railway",
+    date: "30 April 2025",
+    competition: false,
+    position: "",
+    pitchUrl: "/pdfs/Canadian National Railway Pitch.pdf",
+  },
+  {
+    title: "Iron Mountain",
+    date: "10 March 2025",
+    competition: true,
+    position: "Top 5 Finalist (only team of 1st year students to reach there)",
+    pitchUrl: "/pdfs/Iron Mountain Pitch.pdf",
+  },
+  {
+    title: "Comcast",
+    date: "10 February 2025",
+    competition: false,
+    position: "",
+    pitchUrl: "/pdfs/Comcast Pitch.pdf",
+  },
+];
+
+export const otherWork = [
+  {
+    title: "Cryptocurrencies can act as money if left alone",
+    subtitle: "FT letter to the editor",
+    date: "21 July 2021",
+    description: "Letter published in the Financial Times offering a perspective on cryptocurrencies as money.",
+    links: [
+      { label: "FT (subscription)", url: "https://www.ft.com/content/8cd1a96e-ce2a-4b55-8800-085abedcfa2b?shareType=nongift" },
+      { label: "No-subscription link", url: "https://drive.google.com/file/d/1wCrqOW_eWaqBL0skY097AoNsPEBaVVuQ/view" },
+    ],
+  },
+  {
+    title: "Perplexity Computer's Stock Pitch Competition",
+    subtitle: "Honorable mention, top 70 of 1400+",
+    date: "8 April 2026",
+    description: "A stock pitch competition run by Perplexity Computer mode, focusing on a concise, data-driven buy/sell recommendation.",
+    links: [
+      { label: "Website", url: "https://www.perplexity.ai/computer/a/parker-hannifin-sell-pitch-IjzJ0i9qRSqOSok078lGhg" },
+    ],
+  },
+  {
+    title: "Deckers / Crocs M&A Model",
+    subtitle: "M&A model and pitch",
+    date: "Oct 2025",
+    description: "A detailed acquisition model and pitch for Deckers' acquisition of Crocs.",
+    links: [
+      { label: "Pitch", url: "/pdfs/deckers-crocs-mna.pdf" },
+      { label: "Model", url: "/pdfs/deckers-crocs-model.xlsb" },
+    ],
   },
 ];
 

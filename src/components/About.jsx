@@ -2,8 +2,8 @@ import { MapPin, GraduationCap, Calendar, BookOpen } from 'lucide-react';
 import { personal } from '../data/portfolio';
 
 const highlights = [
-  { icon: MapPin, text: 'New York, NY' },
-  { icon: GraduationCap, text: 'Economics & Finance' },
+  { icon: MapPin, text: personal.location },
+  { icon: GraduationCap, text: personal.degree },
   { icon: Calendar, text: `Graduating ${personal.graduation}` },
   { icon: BookOpen, text: 'Data Science Focus' },
 ];

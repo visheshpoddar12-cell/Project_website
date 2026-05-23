@@ -1,5 +1,4 @@
-import { ArrowRight, Download, TrendingUp } from 'lucide-react';
-import { personal, stats } from '../data/portfolio';
+import { personal } from '../data/portfolio';
 
 export default function Hero() {
   return (
@@ -7,62 +6,31 @@ export default function Hero() {
       <div className="hero__bg-grid" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">
-            <span className="dot" />
-            Economics &amp; Finance &nbsp;·&nbsp; Data Science &nbsp;·&nbsp; Quantitative Analysis
-          </p>
-
           <h1 className="hero__headline serif">
-            {personal.heroHeadline}
+            {personal.name}
           </h1>
 
-          <p className="hero__sub">{personal.heroSub}</p>
+          <div className="hero__tags">
+            <span>Finance</span>
+            <span>Economics</span>
+            <span>Data Science</span>
+          </div>
 
           <div className="hero__ctas">
-            <a href="#research" className="btn btn-primary">
-              Explore My Research <ArrowRight size={15} />
-            </a>
-            <a href="#resume" className="btn btn-outline">
-              <Download size={15} /> Download Resume
+            <a href="#projects" className="btn btn-primary">
+              Explore my projects
             </a>
           </div>
 
-          <div className="hero__stats">
-            {stats.map((s) => (
-              <div key={s.label} className="hero__stat">
-                <span className="hero__stat-value">{s.value}</span>
-                <span className="hero__stat-label">{s.label}</span>
-              </div>
-            ))}
+          <div className="hero__links">
+            <a href={`mailto:${personal.email}`} className="hero__link">Email</a>
+            <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hero__link">LinkedIn</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero__link">Resume</a>
           </div>
         </div>
 
-        <div className="hero__visual" aria-hidden="true">
-          <div className="hero__chart-card">
-            <div className="hero__chart-header">
-              <TrendingUp size={14} strokeWidth={2} />
-              <span>Market Intelligence</span>
-            </div>
-            <div className="hero__chart-bars">
-              {[45, 62, 51, 78, 65, 88, 72, 94, 80, 96].map((h, i) => (
-                <div
-                  key={i}
-                  className="hero__bar"
-                  style={{ height: `${h}%`, animationDelay: `${i * 80}ms` }}
-                />
-              ))}
-            </div>
-            <div className="hero__chart-footer">
-              <span className="hero__chart-tag">Python</span>
-              <span className="hero__chart-tag">Pandas</span>
-              <span className="hero__chart-tag">Bloomberg</span>
-            </div>
-          </div>
-
-          <div className="hero__pill hero__pill--1">DCF Modeling</div>
-          <div className="hero__pill hero__pill--2">Econometrics</div>
-          <div className="hero__pill hero__pill--3">Equity Research</div>
-          <div className="hero__pill hero__pill--4">ML Models</div>
+        <div className="hero__visual">
+          <img src="/headshot.png" alt="LinkedIn headshot" className="hero__headshot" />
         </div>
       </div>
 
@@ -101,92 +69,74 @@ export default function Hero() {
           position: relative;
           z-index: 1;
         }
-        .hero__eyebrow {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--gold);
-          margin-bottom: 24px;
-        }
-        .dot {
-          width: 6px; height: 6px;
-          border-radius: 50%;
-          background: var(--gold);
-          flex-shrink: 0;
-          animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
-        }
         .hero__headline {
-          font-size: clamp(32px, 4.5vw, 54px);
+          font-size: clamp(46px, 5.5vw, 82px);
           color: var(--white);
-          line-height: 1.15;
-          margin-bottom: 24px;
-          max-width: 620px;
+          line-height: 1.05;
+          margin-bottom: 18px;
+          max-width: 720px;
         }
-        .hero__sub {
-          font-size: 17px;
-          color: rgba(255,255,255,0.62);
-          line-height: 1.75;
-          max-width: 560px;
-          margin-bottom: 36px;
+        .hero__tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 28px;
+        }
+        .hero__tags span {
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--gold);
+          background: rgba(255,255,255,0.06);
+          padding: 8px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,0.16);
         }
         .hero__ctas {
           display: flex;
           gap: 14px;
           flex-wrap: wrap;
-          margin-bottom: 56px;
+          margin-bottom: 24px;
         }
         .hero .btn-primary { background: var(--gold); color: var(--navy); }
         .hero .btn-primary:hover { background: var(--gold-light); }
-        .hero .btn-outline { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
-        .hero .btn-outline:hover { background: rgba(255,255,255,0.08); color: var(--white); border-color: rgba(255,255,255,0.5); }
-        .hero__stats {
+        .hero__links {
           display: flex;
-          gap: 40px;
-          padding-top: 32px;
-          border-top: 1px solid rgba(255,255,255,0.1);
+          flex-wrap: wrap;
+          gap: 12px;
+          align-items: center;
         }
-        .hero__stat { display: flex; flex-direction: column; }
-        .hero__stat-value {
-          font-size: 26px;
-          font-weight: 700;
-          color: var(--white);
-          font-family: var(--font-serif);
-          line-height: 1;
-        }
-        .hero__stat-label {
-          font-size: 11px;
-          font-weight: 500;
-          color: rgba(255,255,255,0.45);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          margin-top: 4px;
-        }
-
-        /* Visual side */
-        .hero__visual {
-          position: relative;
-          height: 420px;
-          display: flex;
+        .hero__link {
+          display: inline-flex;
           align-items: center;
           justify-content: center;
+          padding: 10px 16px;
+          border-radius: var(--radius);
+          background: rgba(255,255,255,0.08);
+          color: rgba(255,255,255,0.85);
+          text-decoration: none;
+          font-size: 14px;
+          border: 1px solid rgba(255,255,255,0.12);
+          transition: background var(--transition), color var(--transition), border-color var(--transition);
         }
-        .hero__chart-card {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: var(--radius-lg);
-          padding: 24px;
-          width: 280px;
-          backdrop-filter: blur(10px);
+        .hero__link:hover {
+          background: rgba(255,255,255,0.18);
+          color: var(--white);
+          border-color: rgba(255,255,255,0.25);
+        }
+        .hero__visual {
           position: relative;
-          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+        }
+        .hero__headshot {
+          width: 100%;
+          max-width: 440px;
+          border-radius: 28px;
+          box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+          border: 1px solid rgba(255,255,255,0.1);
+          object-fit: cover;
         }
         .hero__chart-header {
           display: flex;

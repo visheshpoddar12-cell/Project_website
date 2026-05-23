@@ -3,12 +3,8 @@ import { Menu, X } from 'lucide-react';
 import { personal } from '../data/portfolio';
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Research', href: '#research' },
+  { label: 'Home', href: '#hero' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Resume', href: '#resume' },
 ];
 
 export default function Navbar() {
@@ -56,10 +52,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <a href="#contact" className="btn btn-primary navbar__cta" onClick={() => handleNav('#contact')}>
-            Contact
-          </a>
-
           <button
             className="navbar__hamburger"
             onClick={() => setOpen(!open)}
@@ -80,11 +72,7 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
-            <a href="#contact" className="btn btn-gold mobile-nav__btn" onClick={() => handleNav('#contact')}>
-              Contact
-            </a>
-          </li>
+
         </ul>
       </div>
 
@@ -113,10 +101,11 @@ export default function Navbar() {
           font-size: 16px;
           font-weight: 600;
           letter-spacing: -0.01em;
-          color: var(--navy);
+          color: var(--white);
+          text-shadow: 0 1px 14px rgba(0,0,0,0.35);
           flex-shrink: 0;
         }
-        .navbar__logo-first { color: var(--navy); }
+        .navbar__logo-first { color: var(--white); }
         .navbar__logo-last { color: var(--gold); margin-left: 4px; }
         .navbar__links {
           display: flex;
@@ -126,18 +115,26 @@ export default function Navbar() {
           align-items: center;
         }
         .navbar__link {
-          font-size: 13.5px;
-          font-weight: 500;
-          color: var(--text-secondary);
-          padding: 8px 12px;
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(255,255,255,0.95);
+          padding: 10px 14px;
           border-radius: var(--radius);
           transition: color var(--transition), background var(--transition);
           letter-spacing: 0.01em;
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.16);
         }
         .navbar__link:hover, .navbar__link.active {
-          color: var(--navy);
-          background: var(--gray-100);
+          color: var(--white);
+          background: rgba(255,255,255,0.2);
+          border-color: rgba(255,255,255,0.24);
         }
+        .navbar--scrolled .navbar__logo { color: var(--navy); }
+        .navbar--scrolled .navbar__logo-first { color: var(--navy); }
+        .navbar--scrolled .navbar__logo-last { color: var(--gold); }
+        .navbar--scrolled .navbar__link { color: var(--text-secondary); }
+        .navbar--scrolled .navbar__link:hover, .navbar--scrolled .navbar__link.active { color: var(--navy); background: var(--gray-100); }
         .navbar__cta { margin-left: 8px; padding: 9px 20px; font-size: 13.5px; }
         .navbar__hamburger {
           display: none;

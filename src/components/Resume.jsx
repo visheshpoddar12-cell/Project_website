@@ -13,7 +13,7 @@ export default function Resume() {
           </p>
           <div className="resume__meta">
             <span className="resume__meta-item">
-              <RefreshCw size={12} /> Last updated: May 2025
+              <RefreshCw size={12} /> Last updated: May 2026
             </span>
             <span className="resume__meta-item">
               <FileText size={12} /> One page PDF

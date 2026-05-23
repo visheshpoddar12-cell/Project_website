@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ExternalLink, GitBranch, ChevronDown, ChevronUp } from 'lucide-react';
-import { projects } from '../data/portfolio';
+import { ExternalLink, FileText, GitBranch, ChevronDown, ChevronUp } from 'lucide-react';
+import { projects, stockPitches, otherWork } from '../data/portfolio';
 
 const allCats = ['All', ...new Set(projects.map(p => p.category))];
 
@@ -20,6 +20,11 @@ function ProjectCard({ project }) {
           {project.github && (
             <a href={project.github} className="proj-card__icon-btn" title="GitHub">
               <GitBranch size={14} />
+            </a>
+          )}
+          {project.pdf && (
+            <a href={project.pdf} target="_blank" rel="noopener noreferrer" className="proj-card__icon-btn" title="View PDF">
+              <FileText size={14} />
             </a>
           )}
         </div>
@@ -66,26 +71,73 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="container">
-        <p className="section-label">Projects</p>
-        <h2 className="section-title">Finance &amp; Data Science Work</h2>
-        <p className="section-sub" style={{ marginBottom: 36 }}>
-          Each project addresses a real financial or economic question using quantitative methods. Documented by problem, methodology, and outcome — not just code.
-        </p>
+        <div className="proj__section" id="stock-pitches">
+          <p className="section-label">Stock pitches and equity research reports</p>
 
-        <div className="proj__filters">
-          {allCats.map((c) => (
-            <button
-              key={c}
-              className={`research__filter-btn${active === c ? ' active' : ''}`}
-              onClick={() => setActive(c)}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
 
-        <div className="proj__grid">
-          {filtered.map((p, i) => <ProjectCard key={i} project={p} />)}
+          <div className="pitches-table">
+            <div className="pitches-row pitches-header">
+              <div className="pitches-cell name">Pitch</div>
+              <div className="pitches-cell date">Date</div>
+              <div className="pitches-cell type">Type</div>
+              <div className="pitches-cell pos">Position</div>
+            </div>
+
+            {stockPitches.map((p, i) => (
+              <div className="pitches-row" key={`pitch-${i}`}>
+                <div className="pitches-cell name">
+                  <span className="pitch-text">{p.title}</span>
+                  {p.reportUrl && (
+                    <a href={p.reportUrl} target="_blank" rel="noopener noreferrer" className="action-button" style={{ marginLeft: 12 }}>
+                      Report
+                    </a>
+                  )}
+                  {p.modelUrl && (
+                    <a href={p.modelUrl} className="action-button" download style={{ marginLeft: 12 }}>
+                      Model
+                    </a>
+                  )}
+                  {p.websiteUrl && (
+                    <a href={p.websiteUrl} target="_blank" rel="noopener noreferrer" className="action-button" style={{ marginLeft: 12 }}>
+                      Website
+                    </a>
+                  )}
+                  {p.pitchUrl && (
+                    <a href={p.pitchUrl} target="_blank" rel="noopener noreferrer" className="action-button" style={{ marginLeft: 12 }}>
+                      Pitch
+                    </a>
+                  )}
+                </div>
+                <div className="pitches-cell date">{p.date}</div>
+                <div className="pitches-cell type">{p.competition ? 'Competition' : 'Personal'}</div>
+                <div className="pitches-cell pos">{p.position}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="proj__section" id="other">
+            <p className="section-label">Other</p>
+            <h3 className="section-title section-title--small">Additional writing and modeling work</h3>
+            <div className="other-grid">
+              {otherWork.map((item, index) => (
+                <div key={index} className="other-card">
+                  <div className="other-card__heading">
+                    <p className="other-card__subtitle">{item.subtitle}</p>
+                    <h4>{item.title}</h4>
+                    <p className="other-card__date">{item.date}</p>
+                  </div>
+                  <p className="other-card__desc">{item.description}</p>
+                  <div className="other-card__actions">
+                    {item.links.map((link) => (
+                      <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="action-button">
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -95,6 +147,13 @@ export default function Projects() {
           flex-wrap: wrap;
           gap: 8px;
           margin-bottom: 40px;
+        }
+        .proj__section .section-label {
+          font-size: 22px;
+          line-height: 1.1;
+          font-weight: 700;
+          color: var(--gold);
+          margin-bottom: 18px;
         }
         .proj__grid {
           display: grid;
@@ -222,11 +281,34 @@ export default function Projects() {
           color: var(--white);
           border-color: var(--navy);
         }
-        @media (max-width: 960px) {
-          .proj__grid { grid-template-columns: repeat(2, 1fr); }
+        /* Stock pitches table styles */
+        .pitches-table { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+        .pitches-row { display: grid; grid-template-columns: 1fr 140px 120px 220px; gap: 12px; align-items: center; padding: 12px 14px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); }
+        .pitches-header { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+        .pitches-cell.name { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .pitches-cell.date,
+        .pitches-cell.type,
+        .pitches-cell.pos { font-size: 13px; color: var(--text-secondary); }
+        .pitch-text { font-weight: 600; color: var(--navy); }
+        .action-button { display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; border-radius: 999px; background: var(--gray-100); border: 1px solid var(--border); color: var(--navy); font-size: 12px; text-decoration: none; transition: all var(--transition); }
+        .action-button:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+        .other-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 24px; }
+        .other-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+        .other-card__subtitle { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        .other-card h4 { margin: 0; font-size: 18px; line-height: 1.35; color: var(--navy); }
+        .other-card__date { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+        .other-card__desc { font-size: 14px; line-height: 1.75; color: var(--text-secondary); }
+        .other-card__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+        #other { margin-top: 48px; }
+        @media (max-width: 1100px) {
+          .other-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 760px) {
           .proj__grid { grid-template-columns: 1fr; }
+          .pitches-row { grid-template-columns: 1fr; }
+          .pitches-row.pitches-header { display: none; }
+          .pitches-cell { width: 100%; }
+          .other-grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </section>

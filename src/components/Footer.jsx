@@ -12,7 +12,7 @@ export default function Footer() {
           <p className="footer__tagline">Economics · Finance · Data Science</p>
         </div>
         <nav className="footer__nav">
-          {['#about', '#experience', '#research', '#projects', '#skills', '#resume', '#contact'].map((h) => (
+          {['#about', '#research', '#projects', '#skills', '#leadership', '#resume', '#experience', '#contact'].map((h) => (
             <a key={h} href={h} className="footer__nav-link">
               {h.slice(1).charAt(0).toUpperCase() + h.slice(2)}
             </a>
