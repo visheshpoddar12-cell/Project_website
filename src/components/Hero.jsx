@@ -18,13 +18,6 @@ export default function Hero() {
             Global Markets • Sales &amp; Trading • Research • Data-Driven Strategy
           </p>
 
-          <div className="hero__tags">
-            <span className="hero__tag">Global Markets</span>
-            <span className="hero__tag">Sales & Trading</span>
-            <span className="hero__tag">Research</span>
-            <span className="hero__tag">Data-Driven Strategy</span>
-          </div>
-
           <div className="hero__ctas">
             <a href="#projects" className="btn btn-primary">
               View Research <ArrowRight size={15} />
@@ -100,33 +93,6 @@ export default function Hero() {
           padding-bottom: 46px;
           position: relative;
           z-index: 1;
-        }
-
-        /* Tags */
-        .hero__tags {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin-bottom: 28px;
-          flex-wrap: wrap;
-        }
-        .hero__tag {
-          font-family: var(--font-mono);
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--text);
-          padding: 5px 12px;
-          border: 1px solid rgba(255,255,255,0.14);
-          border-radius: 4px;
-          background: rgba(255,255,255,0.08);
-          transition: all var(--transition);
-        }
-        .hero__tag:hover {
-          border-color: var(--border-accent);
-          color: var(--cyan);
-          background: var(--cyan-dim);
         }
         .hero__headline {
           max-width: 850px;

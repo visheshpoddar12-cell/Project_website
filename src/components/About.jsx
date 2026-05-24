@@ -74,12 +74,12 @@ export default function About() {
           align-items: center;
           gap: 7px;
           padding: 7px 14px;
-          border: 1px solid var(--border);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 6px;
           font-size: 13px;
           font-weight: 500;
           color: var(--text-2);
-          background: rgba(255,255,255,0.03);
+          background: rgba(255,255,255,0.06);
           transition: all var(--transition);
         }
         .about__chip:hover {

@@ -228,7 +228,7 @@ export default function Projects() {
         .pitch-card--modeling::before {
           background: var(--rose);
         }
-                .pitch-card:hover {
+                 .pitch-card:hover {
           transform: translateY(-2px);
           border-color: rgba(126,181,255,0.6);
           background: rgba(255,255,255,0.14);
@@ -431,17 +431,16 @@ export default function Projects() {
           gap: 20px;
         }
         .other-card {
+          position: relative;
           display: flex;
           flex-direction: column;
-          gap: 14px;
-          min-height: 282px;
-          padding: 26px;
-          border-radius: 6px;
-          background:
-            linear-gradient(180deg, rgba(255,255,255,0.026), transparent),
-            #0D1117;
-          position: relative;
+          min-height: 220px;
           overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+          transition: transform var(--transition), border-color var(--transition), background var(--transition);
         }
         .other-card::before {
           content: '';
@@ -450,9 +449,17 @@ export default function Projects() {
           height: 2px;
           background: rgba(0,229,200,0.4);
         }
-        .other-card:hover {
-          border-color: rgba(0,229,200,0.28);
-          box-shadow: var(--shadow-sm);
+        .other-card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          min-height: 220px;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+          transition: transform var(--transition), border-color var(--transition), background var(--transition);
         }
         .other-card__tag {
           display: inline-block;
@@ -465,21 +472,17 @@ export default function Projects() {
           width: fit-content;
           font-family: var(--font-mono);
         }
-        .other-card__tag--gold  { background: var(--gold-dim);  color: var(--gold-light);  border: 1px solid rgba(245,158,11,0.2); }
-        .other-card__tag--cyan  { background: var(--cyan-dim);  color: var(--cyan-light);  border: 1px solid rgba(6,182,212,0.2); }
-        .other-card__tag--emerald { background: rgba(16,185,129,0.1); color: #6EE7B7; border: 1px solid rgba(16,185,129,0.2); }
-
-        .other-card__title { font-size: 18px; font-weight: 800; color: var(--text); line-height: 1.25; letter-spacing: -0.01em; }
-        .other-card__date  { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-        .other-card__desc  { font-size: 13.5px; color: var(--text-2); line-height: 1.7; flex: 1; }
-
-        .other-card__links {
+        .other-card {
+          position: relative;
           display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-          padding-top: 12px;
-          border-top: 1px solid var(--border);
-          margin-top: auto;
+          flex-direction: column;
+          min-height: 220px;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+          transition: transform var(--transition), border-color var(--transition), background var(--transition);
         }
         .other-link {
           display: inline-flex;
