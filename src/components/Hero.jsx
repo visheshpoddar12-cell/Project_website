@@ -86,8 +86,8 @@ export default function Hero() {
           opacity: 0.18;
           pointer-events: none;
           background:
-            linear-gradient(135deg, transparent 0 10%, rgba(57,255,136,0.38) 10.2% 10.6%, transparent 10.8% 29%, rgba(0,229,200,0.5) 29.2% 29.6%, transparent 29.8% 48%, rgba(255,77,90,0.42) 48.2% 48.6%, transparent 48.8%),
-            linear-gradient(180deg, rgba(166,179,173,0.08) 1px, transparent 1px);
+            linear-gradient(135deg, transparent 0 10%, rgba(126,181,255,0.28) 10.2% 10.6%, transparent 10.8% 29%, rgba(126,181,255,0.22) 29.2% 29.6%, transparent 29.8% 48%, rgba(201,180,111,0.18) 48.2% 48.6%, transparent 48.8%),
+            linear-gradient(180deg, rgba(216,228,255,0.08) 1px, transparent 1px);
           background-size: 100% 100%, 100% 52px;
         }
         .hero__inner {
