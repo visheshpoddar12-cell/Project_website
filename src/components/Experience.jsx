@@ -2,7 +2,7 @@ import { experience } from '../data/portfolio';
 
 export default function Experience() {
   return (
-    <section id="experience">
+    <section id="experience" className="alt">
       <div className="container">
         <p className="section-label">Experience</p>
         <h2 className="section-title">Professional History</h2>
@@ -14,16 +14,18 @@ export default function Experience() {
           {experience.map((role, i) => (
             <div key={i} className="exp-item">
               <div className="exp-item__marker">
-                <div className="exp-item__dot" />
-                {i < experience.length - 1 && <div className="exp-item__line" />}
+                <div className="exp-dot" />
+                {i < experience.length - 1 && <div className="exp-line" />}
               </div>
 
-              <div className="exp-card">
+              <div className="exp-card glass-card">
                 <div className="exp-card__header">
-                  <div>
+                  <div className="exp-card__meta">
                     <h3 className="exp-card__title">{role.title}</h3>
                     <p className="exp-card__company">
-                      {role.company} &nbsp;·&nbsp; <span className="exp-card__location">{role.location}</span>
+                      {role.company}
+                      <span className="exp-card__sep"> · </span>
+                      <span className="exp-card__loc">{role.location}</span>
                     </p>
                   </div>
                   <span className="exp-card__dates">{role.dates}</span>
@@ -31,8 +33,8 @@ export default function Experience() {
 
                 <ul className="exp-card__bullets">
                   {role.bullets.map((b, j) => (
-                    <li key={j} className="exp-card__bullet">
-                      <span className="exp-card__bullet-dot" />
+                    <li key={j} className="exp-bullet">
+                      <span className="exp-bullet__dot" />
                       {b}
                     </li>
                   ))}
@@ -50,10 +52,10 @@ export default function Experience() {
       </div>
 
       <style>{`
-        .exp-timeline { display: flex; flex-direction: column; gap: 0; }
+        .exp-timeline { display: flex; flex-direction: column; }
         .exp-item {
           display: grid;
-          grid-template-columns: 28px 1fr;
+          grid-template-columns: 32px 1fr;
           gap: 20px;
           margin-bottom: 8px;
         }
@@ -61,94 +63,92 @@ export default function Experience() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding-top: 28px;
+          padding-top: 30px;
         }
-        .exp-item__dot {
+        .exp-dot {
           width: 12px; height: 12px;
           border-radius: 50%;
-          background: var(--gold);
-          border: 2px solid var(--white);
-          box-shadow: 0 0 0 2px var(--gold);
+          background: var(--cyan);
+          border: 2px solid var(--bg);
+          box-shadow: 0 0 0 2px var(--cyan), var(--glow-cyan);
           flex-shrink: 0;
           z-index: 1;
         }
-        .exp-item__line {
+        .exp-line {
           width: 1px;
           flex: 1;
-          background: var(--border);
+          background: linear-gradient(to bottom, rgba(6,182,212,0.3), rgba(6,182,212,0.05));
           margin-top: 8px;
-          margin-bottom: -28px;
+          margin-bottom: -30px;
         }
         .exp-card {
-          background: var(--white);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
           padding: 24px 28px;
           margin-bottom: 20px;
-          box-shadow: var(--shadow-sm);
-          transition: box-shadow var(--transition), border-color var(--transition);
-        }
-        .exp-card:hover {
-          box-shadow: var(--shadow-md);
-          border-color: var(--gray-200);
         }
         .exp-card__header {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          margin-bottom: 16px;
-          gap: 12px;
+          margin-bottom: 18px;
+          gap: 16px;
           flex-wrap: wrap;
         }
         .exp-card__title {
           font-size: 16px;
-          font-weight: 600;
-          color: var(--navy);
-          margin-bottom: 4px;
+          font-weight: 700;
+          color: var(--text);
+          margin-bottom: 5px;
+          letter-spacing: -0.01em;
         }
         .exp-card__company {
           font-size: 13.5px;
           font-weight: 500;
-          color: var(--text-secondary);
+          color: var(--text-2);
         }
-        .exp-card__location { color: var(--text-muted); }
+        .exp-card__sep { color: var(--text-dim); }
+        .exp-card__loc { color: var(--text-muted); }
         .exp-card__dates {
-          font-size: 12.5px;
-          font-weight: 500;
+          font-size: 12px;
+          font-weight: 600;
           color: var(--text-muted);
           white-space: nowrap;
-          padding: 4px 10px;
-          background: var(--gray-100);
-          border-radius: 3px;
+          padding: 4px 12px;
+          background: rgba(6,182,212,0.06);
+          border: 1px solid rgba(6,182,212,0.15);
+          border-radius: 4px;
           flex-shrink: 0;
+          letter-spacing: 0.02em;
         }
         .exp-card__bullets {
           list-style: none;
           display: flex;
           flex-direction: column;
           gap: 10px;
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
-        .exp-card__bullet {
+        .exp-bullet {
           display: flex;
           gap: 12px;
           font-size: 14px;
-          color: var(--text-secondary);
-          line-height: 1.6;
+          color: var(--text-2);
+          line-height: 1.65;
           align-items: flex-start;
         }
-        .exp-card__bullet-dot {
+        .exp-bullet__dot {
           width: 5px; height: 5px;
           border-radius: 50%;
-          background: var(--gold);
+          background: var(--cyan);
           flex-shrink: 0;
-          margin-top: 7px;
+          margin-top: 8px;
+          box-shadow: 0 0 6px rgba(6,182,212,0.6);
         }
         .exp-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
         @media (max-width: 600px) {
           .exp-item { grid-template-columns: 1fr; }
           .exp-item__marker { display: none; }
           .exp-card__header { flex-direction: column; }
+          .exp-card { padding: 20px; }
         }
       `}</style>
     </section>

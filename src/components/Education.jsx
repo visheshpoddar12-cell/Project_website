@@ -12,21 +12,23 @@ export default function Education() {
         </p>
 
         {education.map((edu) => (
-          <div key={edu.institution} className="edu-card">
+          <div key={edu.institution} className="edu-card glass-card">
             <div className="edu-card__header">
               <div className="edu-card__logo">
-                <span className="edu-card__logo-text">{edu.institution.split(' ').map(w => w[0]).join('').slice(0,2)}</span>
+                <span className="edu-card__initials">
+                  {edu.institution.split(' ').map(w => w[0]).join('').slice(0, 2)}
+                </span>
               </div>
               <div className="edu-card__meta">
-                <h3 className="edu-card__institution">{edu.institution}</h3>
+                <h3 className="edu-card__inst">{edu.institution}</h3>
                 <p className="edu-card__degree">{edu.degree}</p>
                 <p className="edu-card__conc">Concentration: {edu.concentration}</p>
               </div>
               <div className="edu-card__right">
                 <span className="edu-card__dates">{edu.dates}</span>
                 <div className="edu-card__gpa">
-                  <span className="edu-card__gpa-value">{edu.gpa}</span>
-                  <span className="edu-card__gpa-label">GPA</span>
+                  <span className="edu-card__gpa-val">{edu.gpa}</span>
+                  <span className="edu-card__gpa-lbl">GPA</span>
                 </div>
               </div>
             </div>
@@ -40,14 +42,11 @@ export default function Education() {
                   </div>
                 ))}
               </div>
-
-              <div className="edu-card__courses">
-                <p className="edu-card__courses-label">Relevant Coursework</p>
-                <div className="edu-card__course-tags">
-                  {edu.coursework.map((c) => (
-                    <span key={c} className="tag tag-navy">{c}</span>
-                  ))}
-                </div>
+              <p className="edu-card__courses-lbl">Relevant Coursework</p>
+              <div className="edu-card__course-tags">
+                {edu.coursework.map((c) => (
+                  <span key={c} className="tag tag-navy">{c}</span>
+                ))}
               </div>
             </div>
           </div>
@@ -55,12 +54,10 @@ export default function Education() {
       </div>
 
       <style>{`
-        .edu-card {
-          background: var(--white);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
-          overflow: hidden;
-          box-shadow: var(--shadow-sm);
+        .edu-card { overflow: hidden; padding: 0; }
+        .edu-card:hover {
+          border-color: rgba(0,229,200,0.28);
+          box-shadow: 0 0 0 1px rgba(0,229,200,0.06), var(--shadow-sm);
         }
         .edu-card__header {
           display: grid;
@@ -71,61 +68,71 @@ export default function Education() {
           border-bottom: 1px solid var(--border);
         }
         .edu-card__logo {
-          width: 56px; height: 56px;
-          background: var(--navy);
+          width: 54px; height: 54px;
+          background: linear-gradient(135deg, var(--cyan-dim), rgba(245,158,11,0.1));
+          border: 1px solid var(--border-accent);
           border-radius: var(--radius);
           display: flex; align-items: center; justify-content: center;
           flex-shrink: 0;
         }
-        .edu-card__logo-text {
-          font-family: var(--font-serif);
-          font-size: 20px;
-          color: var(--white);
-          letter-spacing: -0.02em;
-        }
-        .edu-card__institution {
+        .edu-card__initials {
           font-size: 18px;
-          font-weight: 600;
-          color: var(--navy);
-          margin-bottom: 3px;
+          font-weight: 900;
+          background: linear-gradient(135deg, var(--cyan), var(--gold));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .edu-card__inst {
+          font-size: 17px;
+          font-weight: 700;
+          color: var(--text);
+          margin-bottom: 4px;
+          letter-spacing: -0.01em;
         }
         .edu-card__degree {
           font-size: 14px;
           font-weight: 500;
-          color: var(--text-primary);
+          color: var(--text-2);
           margin-bottom: 2px;
         }
-        .edu-card__conc {
-          font-size: 13px;
-          color: var(--text-muted);
-        }
+        .edu-card__conc { font-size: 13px; color: var(--text-muted); }
         .edu-card__right {
           text-align: right;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 10px;
+          align-items: flex-end;
         }
         .edu-card__dates {
-          font-size: 13px;
+          font-size: 12px;
           color: var(--text-muted);
-          font-weight: 500;
+          font-weight: 600;
+          letter-spacing: 0.02em;
         }
         .edu-card__gpa {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          padding: 10px 12px;
+          border: 1px solid rgba(198,162,74,0.22);
+          border-radius: var(--radius);
+          background: rgba(198,162,74,0.055);
         }
-        .edu-card__gpa-value {
-          font-size: 22px;
-          font-weight: 700;
-          color: var(--navy);
-          font-family: var(--font-serif);
+        .edu-card__gpa-val {
+          font-size: 26px;
+          font-weight: 900;
+          letter-spacing: -0.03em;
           line-height: 1;
+          background: linear-gradient(135deg, var(--cyan), var(--gold));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
-        .edu-card__gpa-label {
+        .edu-card__gpa-lbl {
           font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
+          font-weight: 700;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
           color: var(--text-muted);
           margin-top: 2px;
@@ -134,27 +141,36 @@ export default function Education() {
         .edu-card__honors {
           display: flex;
           flex-wrap: wrap;
-          gap: 10px;
+          gap: 12px;
           margin-bottom: 24px;
         }
         .edu-card__honor {
           display: flex;
           align-items: center;
-          gap: 6px;
+          gap: 7px;
           font-size: 13px;
-          color: var(--text-secondary);
+          color: var(--text-2);
           font-weight: 500;
         }
         .edu-card__honor svg { color: var(--gold); }
-        .edu-card__courses-label {
+        .edu-card__courses-lbl {
           font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.08em;
+          font-weight: 700;
+          letter-spacing: 0.1em;
           text-transform: uppercase;
           color: var(--text-muted);
           margin-bottom: 12px;
         }
-        .edu-card__course-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .edu-card__course-tags {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 8px;
+        }
+        .edu-card__course-tags .tag {
+          text-align: center;
+          justify-content: center;
+        }
+
         @media (max-width: 700px) {
           .edu-card__header { grid-template-columns: auto 1fr; }
           .edu-card__right { display: none; }

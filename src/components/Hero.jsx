@@ -1,210 +1,286 @@
-import { personal } from '../data/portfolio';
+import { ArrowRight, Download, Mail } from 'lucide-react';
+import { personal, stats } from '../data/portfolio';
+import headshotPng from '../../headshot.png';
 
 export default function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero__bg-grid" aria-hidden="true" />
+      <div className="hero__grid grid-bg" aria-hidden="true" />
+      <div className="hero__chartline" aria-hidden="true" />
+
       <div className="container hero__inner">
         <div className="hero__content">
-          <h1 className="hero__headline serif">
-            {personal.name}
+          <h1 className="hero__headline">
+            {personal.firstName}<br />{personal.lastName}
           </h1>
 
+          <p className="hero__subtitle">
+            Global Markets • Sales &amp; Trading • Research • Data-Driven Strategy
+          </p>
+
           <div className="hero__tags">
-            <span>Finance</span>
-            <span>Economics</span>
-            <span>Data Science</span>
+            <span className="hero__tag">Global Markets</span>
+            <span className="hero__tag">Sales & Trading</span>
+            <span className="hero__tag">Research</span>
+            <span className="hero__tag">Data-Driven Strategy</span>
           </div>
 
           <div className="hero__ctas">
             <a href="#projects" className="btn btn-primary">
-              Explore my projects
+              View Research <ArrowRight size={15} />
+            </a>
+            <a href="/resume.pdf" download className="btn-outline-light">
+              <Download size={14} /> Resume
             </a>
           </div>
 
+          <div className="hero__market-strip" aria-label="Market focus areas">
+            {['Equities', 'FX', 'Rates', 'Commodities', 'Credit', 'Macro'].map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+
           <div className="hero__links">
-            <a href={`mailto:${personal.email}`} className="hero__link">Email</a>
-            <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hero__link">LinkedIn</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero__link">Resume</a>
+            <a href={`mailto:${personal.email}`} className="hero__link">
+              <Mail size={13} /> Email
+            </a>
+            <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hero__link">
+              LinkedIn
+            </a>
+            <a href="/resume.pdf" download className="hero__link">
+              Resume
+            </a>
+          </div>
+
+          <div className="hero__stats">
+            {stats.map((s) => (
+              <div key={s.label} className="hero__stat">
+                <span className="hero__stat-val">{s.value}</span>
+                <span className="hero__stat-lbl">{s.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="hero__visual">
-          <img src="/headshot.png" alt="LinkedIn headshot" className="hero__headshot" />
-        </div>
+        <aside className="hero__portrait-wrap" aria-label={`${personal.name} portrait`}>
+          <div className="hero__portrait-frame">
+            <img src={headshotPng} alt={personal.name} className="hero__portrait" />
+          </div>
+        </aside>
       </div>
 
       <style>{`
         .hero {
-          min-height: 100vh;
+          min-height: 78vh;
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          align-items: stretch;
           padding-top: var(--nav-height);
-          background: var(--navy);
           position: relative;
           overflow: hidden;
         }
-        .hero__bg-grid {
+        .hero__grid {
           position: absolute;
           inset: 0;
-          background-image:
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 48px 48px;
+          opacity: 0.52;
         }
-        .hero::after {
-          content: '';
+        .hero__chartline {
           position: absolute;
-          bottom: -1px; left: 0; right: 0;
-          height: 80px;
-          background: linear-gradient(to top, var(--white), transparent);
+          inset: 20% 0 auto auto;
+          width: 58%;
+          height: 260px;
+          opacity: 0.18;
+          pointer-events: none;
+          background:
+            linear-gradient(135deg, transparent 0 10%, rgba(57,255,136,0.38) 10.2% 10.6%, transparent 10.8% 29%, rgba(0,229,200,0.5) 29.2% 29.6%, transparent 29.8% 48%, rgba(255,77,90,0.42) 48.2% 48.6%, transparent 48.8%),
+            linear-gradient(180deg, rgba(166,179,173,0.08) 1px, transparent 1px);
+          background-size: 100% 100%, 100% 52px;
         }
         .hero__inner {
           display: grid;
-          grid-template-columns: 1fr 420px;
-          gap: 80px;
+          grid-template-columns: minmax(0, 1.15fr) 400px;
+          gap: 48px;
           align-items: center;
+          flex: 1;
           padding-top: 48px;
-          padding-bottom: 80px;
+          padding-bottom: 46px;
           position: relative;
           z-index: 1;
         }
-        .hero__headline {
-          font-size: clamp(46px, 5.5vw, 82px);
-          color: var(--white);
-          line-height: 1.05;
-          margin-bottom: 18px;
-          max-width: 720px;
-        }
+
+        /* Tags */
         .hero__tags {
           display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
+          align-items: center;
+          gap: 8px;
           margin-bottom: 28px;
+          flex-wrap: wrap;
         }
-        .hero__tags span {
-          font-size: 13px;
-          font-weight: 600;
-          color: var(--gold);
-          background: rgba(255,255,255,0.06);
-          padding: 8px 14px;
-          border-radius: 999px;
-          border: 1px solid rgba(255,255,255,0.16);
+        .hero__tag {
+          font-family: var(--font-mono);
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          padding: 5px 12px;
+          border: 1px solid var(--border);
+          border-radius: 4px;
+          background: rgba(11,15,16,0.72);
+          transition: all var(--transition);
         }
+        .hero__tag:hover {
+          border-color: var(--border-accent);
+          color: var(--cyan);
+          background: var(--cyan-dim);
+        }
+        .hero__headline {
+          max-width: 850px;
+          margin-bottom: 24px;
+          color: var(--text);
+          font-size: clamp(46px, 6.5vw, 82px);
+          font-weight: 860;
+          letter-spacing: -0.04em;
+          line-height: 0.98;
+          margin-bottom: 24px;
+        }
+        .hero__subtitle {
+          max-width: 640px;
+          margin-bottom: 18px;
+          color: var(--text-2);
+          font-size: 17px;
+          line-height: 1.55;
+          letter-spacing: 0.01em;
+        }
+
+        /* CTAs */
         .hero__ctas {
           display: flex;
           gap: 14px;
           flex-wrap: wrap;
-          margin-bottom: 24px;
+          align-items: center;
+          margin-bottom: 16px;
         }
-        .hero .btn-primary { background: var(--gold); color: var(--navy); }
-        .hero .btn-primary:hover { background: var(--gold-light); }
-        .hero__links {
+        .hero__market-strip {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
-          align-items: center;
-        }
-        .hero__link {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 10px 16px;
-          border-radius: var(--radius);
-          background: rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.85);
-          text-decoration: none;
-          font-size: 14px;
-          border: 1px solid rgba(255,255,255,0.12);
-          transition: background var(--transition), color var(--transition), border-color var(--transition);
-        }
-        .hero__link:hover {
-          background: rgba(255,255,255,0.18);
-          color: var(--white);
-          border-color: rgba(255,255,255,0.25);
-        }
-        .hero__visual {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
-        }
-        .hero__headshot {
-          width: 100%;
-          max-width: 440px;
-          border-radius: 28px;
-          box-shadow: 0 40px 80px rgba(0,0,0,0.25);
-          border: 1px solid rgba(255,255,255,0.1);
-          object-fit: cover;
-        }
-        .hero__chart-header {
-          display: flex;
-          align-items: center;
-          gap: 8px;
+          gap: 8px 16px;
+          margin-bottom: 24px;
+          color: var(--text-muted);
+          font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
-          margin-bottom: 20px;
         }
-        .hero__chart-bars {
+        .hero__market-strip span {
+          position: relative;
+        }
+        .hero__market-strip span:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          right: -9px;
+          top: 50%;
+          width: 2px;
+          height: 2px;
+          background: var(--green);
+          transform: translateY(-50%);
+          opacity: 0.65;
+        }
+
+        /* Ghost links */
+        .hero__links {
           display: flex;
-          align-items: flex-end;
-          gap: 5px;
-          height: 100px;
-          margin-bottom: 16px;
-        }
-        .hero__bar {
-          flex: 1;
-          background: linear-gradient(to top, var(--gold), rgba(201,168,76,0.3));
-          border-radius: 2px 2px 0 0;
-          animation: grow 0.6s ease-out backwards;
-        }
-        @keyframes grow {
-          from { height: 0 !important; }
-        }
-        .hero__chart-footer {
-          display: flex;
-          gap: 6px;
+          gap: 24px;
+          margin-bottom: 30px;
           flex-wrap: wrap;
         }
-        .hero__chart-tag {
+        .hero__link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-family: var(--font-mono);
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--text-muted);
+          letter-spacing: 0.06em;
+          transition: color var(--transition);
+          padding-bottom: 2px;
+          border-bottom: 1px solid transparent;
+        }
+        .hero__link:hover {
+          color: var(--text);
+          border-bottom-color: var(--border-accent);
+        }
+
+        /* Stats */
+        .hero__stats {
+          display: flex;
+          gap: 36px;
+          padding-top: 22px;
+          border-top: 1px solid var(--border);
+          flex-wrap: wrap;
+        }
+        .hero__stat { display: flex; flex-direction: column; }
+        .hero__stat-val {
+          font-family: var(--font-mono);
+          font-size: 25px;
+          font-weight: 800;
+          color: var(--text);
+          letter-spacing: -0.03em;
+          line-height: 1;
+        }
+        .hero__stat-lbl {
+          font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 500;
-          padding: 3px 8px;
-          border-radius: 2px;
-          background: rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.6);
-          letter-spacing: 0.03em;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-top: 4px;
         }
-        .hero__pill {
-          position: absolute;
-          font-size: 12px;
-          font-weight: 500;
-          padding: 8px 14px;
-          border-radius: 20px;
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.1);
-          color: rgba(255,255,255,0.7);
-          backdrop-filter: blur(8px);
-          white-space: nowrap;
-        }
-        .hero__pill--1 { top: 30px; left: -20px; }
-        .hero__pill--2 { top: 80px; right: -10px; }
-        .hero__pill--3 { bottom: 100px; left: -30px; }
-        .hero__pill--4 { bottom: 50px; right: 0; }
 
-        @media (max-width: 960px) {
-          .hero__inner { grid-template-columns: 1fr; gap: 0; }
-          .hero__visual { display: none; }
-          .hero__stats { gap: 28px; }
+        .hero__portrait-wrap {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
-        @media (max-width: 480px) {
-          .hero__headline { font-size: 28px; }
-          .hero__ctas { flex-direction: column; }
-          .hero__stats { gap: 20px; flex-wrap: wrap; }
+        .hero__portrait-frame {
+          width: min(100%, 360px);
+          aspect-ratio: 4 / 5;
+          overflow: hidden;
+          border: 1px solid rgba(255,77,90,0.28);
+          border-radius: 14px;
+          background: rgba(5,6,7,0.72);
+          box-shadow: 0 0 0 1px rgba(255,77,90,0.06), 0 24px 60px rgba(0,0,0,0.42);
+        }
+        .hero__portrait {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+        }
+
+        @media (max-width: 1020px) {
+          .hero__inner {
+            grid-template-columns: 1fr;
+            gap: 34px;
+            text-align: center;
+            justify-items: center;
+          }
+          .hero__portrait-wrap { width: 100%; }
+          .hero__portrait-frame { width: min(72vw, 300px); }
+          .hero__tags { justify-content: center; }
+          .hero__market-strip { justify-content: center; }
+          .hero__ctas { justify-content: center; }
+          .hero__links { justify-content: center; }
+          .hero__stats { justify-content: center; }
+        }
+        @media (max-width: 520px) {
+          .hero__headline { font-size: 39px; }
+          .hero__ctas { flex-direction: column; align-items: stretch; }
+          .hero__stats { gap: 20px; }
         }
       `}</style>
     </section>

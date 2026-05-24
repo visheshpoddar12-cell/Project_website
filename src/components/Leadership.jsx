@@ -2,7 +2,7 @@ import { leadership } from '../data/portfolio';
 
 export default function Leadership() {
   return (
-    <section id="leadership">
+    <section id="leadership" className="alt">
       <div className="container">
         <p className="section-label">Leadership</p>
         <h2 className="section-title">Organizations &amp; Initiatives</h2>
@@ -12,10 +12,10 @@ export default function Leadership() {
 
         <div className="lead__grid">
           {leadership.map((item, i) => (
-            <div key={i} className="lead-card">
+            <div key={i} className="lead-card glass-card">
               <div className="lead-card__header">
-                <div className="lead-card__num">{String(i + 1).padStart(2, '0')}</div>
-                <div>
+                <span className="lead-card__num">{String(i + 1).padStart(2, '0')}</span>
+                <div className="lead-card__info">
                   <h3 className="lead-card__role">{item.role}</h3>
                   <p className="lead-card__org">{item.organization}</p>
                 </div>
@@ -23,8 +23,8 @@ export default function Leadership() {
               </div>
               <ul className="lead-card__bullets">
                 {item.bullets.map((b, j) => (
-                  <li key={j} className="lead-card__bullet">
-                    <span className="lead-card__dash">—</span>
+                  <li key={j} className="lead-bullet">
+                    <span className="lead-bullet__dash">—</span>
                     {b}
                   </li>
                 ))}
@@ -38,77 +38,67 @@ export default function Leadership() {
         .lead__grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+          gap: 18px;
         }
-        .lead-card {
-          background: var(--white);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
-          padding: 24px 28px;
-          box-shadow: var(--shadow-sm);
-          transition: box-shadow var(--transition), transform var(--transition);
-        }
-        .lead-card:hover {
-          box-shadow: var(--shadow-md);
-          transform: translateY(-2px);
-        }
+        .lead-card { padding: 24px 26px; }
         .lead-card__header {
           display: grid;
-          grid-template-columns: 36px 1fr auto;
-          gap: 14px;
+          grid-template-columns: 40px 1fr auto;
+          gap: 12px;
           align-items: start;
           margin-bottom: 16px;
           padding-bottom: 16px;
           border-bottom: 1px solid var(--border);
         }
         .lead-card__num {
-          font-family: var(--font-serif);
           font-size: 22px;
-          color: var(--gold);
+          font-weight: 900;
+          letter-spacing: -0.04em;
           line-height: 1;
           padding-top: 2px;
+          background: linear-gradient(135deg, var(--cyan), var(--gold));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         .lead-card__role {
           font-size: 15px;
-          font-weight: 600;
-          color: var(--navy);
+          font-weight: 700;
+          color: var(--text);
           margin-bottom: 3px;
+          letter-spacing: -0.01em;
         }
         .lead-card__org {
           font-size: 13px;
-          color: var(--text-secondary);
+          color: var(--text-2);
           font-weight: 500;
         }
         .lead-card__dates {
-          font-size: 11.5px;
+          font-size: 11px;
           color: var(--text-muted);
-          font-weight: 500;
+          font-weight: 600;
           white-space: nowrap;
           padding-top: 4px;
+          letter-spacing: 0.02em;
         }
-        .lead-card__bullets {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .lead-card__bullet {
+        .lead-card__bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .lead-bullet {
           display: flex;
           gap: 10px;
           font-size: 13.5px;
-          color: var(--text-secondary);
-          line-height: 1.6;
+          color: var(--text-2);
+          line-height: 1.65;
           align-items: flex-start;
         }
-        .lead-card__dash {
-          color: var(--gold);
-          font-weight: 600;
+        .lead-bullet__dash {
+          color: var(--cyan);
+          font-weight: 700;
           flex-shrink: 0;
-          margin-top: 1px;
         }
+
         @media (max-width: 700px) {
           .lead__grid { grid-template-columns: 1fr; }
-          .lead-card__header { grid-template-columns: 32px 1fr; }
+          .lead-card__header { grid-template-columns: 36px 1fr; }
           .lead-card__dates { display: none; }
         }
       `}</style>
