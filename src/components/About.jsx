@@ -21,8 +21,6 @@ export default function About() {
 
           <p className="about__text">{personal.aboutP1}</p>
           <p className="about__text" style={{ marginTop: 16 }}>{personal.aboutP2}</p>
-          <p className="about__scholarship">{personal.scholarships}</p>
-
           <div className="about__chips">
             {highlights.map(({ icon: Icon, text }) => (
               <div key={text} className="about__chip">

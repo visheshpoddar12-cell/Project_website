@@ -15,9 +15,9 @@ export const personal = {
   heroSub:
     "Incoming third-year Rotman Commerce student specializing in Finance and Economics with a Focus in Data Science, actively following markets and building investment research.",
   aboutP1:
-    "I am Vishesh Poddar, an incoming third-year Rotman Commerce student at the University of Toronto, specializing in Finance and Economics with a Focus in Data Science.",
+    "I am Vishesh Poddar, an incoming 3rd year Rotman Commerce student at the University of Toronto, specializing in Finance and Economics with a Focus in Data Science.",
   aboutP2:
-    "I love learning. I like to put myself in new situations and experiences that help me grow. I actively follow the markets and have built several stock pitches as part of my extracurricular involvement around campus.",
+    "I love learning. I like to put myself in new situations and experiences that help me grow. I actively follow the markets and have worked on several projects and reports as part of my extracurricular involvement around campus.",
   scholarships:
     "CGPA & Scholarships: 3.96/4.00; International Scholar ($100,000); Dean's List Scholar; The Professor William Kingston and Dr John Kingston Scholarship.",
 };
@@ -25,7 +25,6 @@ export const personal = {
 export const stats = [
   { value: "3.96", label: "GPA" },
   { value: "10+", label: "Stock Pitches" },
-  { value: "3", label: "Internships" },
 ];
 
 export const education = [
@@ -278,19 +277,7 @@ export const otherWork = [
     description:
       "A stock pitch competition run by Perplexity Computer, focusing on a concise, data-driven buy/sell recommendation.",
     links: [{ label: "Website", href: "https://perplexity.ai", external: true }],
-  },
-  {
-    tag: "M&A Model and Pitch",
-    tagColor: "emerald",
-    title: "Deckers / Crocs M&A Model",
-    date: "Oct 2025",
-    description:
-      "A detailed acquisition model and pitch for Deckers' acquisition of Crocs.",
-    links: [
-      { label: "Pitch", href: "/docs/deckers-crocs-ma.pdf" },
-      { label: "Model", href: "/docs/deckers-crocs-model.xlsb", download: true },
-    ],
-  },
+  }
 ];
 
 export const skills = {

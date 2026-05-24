@@ -29,15 +29,9 @@ export default function Hero() {
             <a href="#projects" className="btn btn-primary">
               View Research <ArrowRight size={15} />
             </a>
-            <a href="/resume.pdf" download className="btn-outline-light">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light">
               <Download size={14} /> Resume
             </a>
-          </div>
-
-          <div className="hero__market-strip" aria-label="Market focus areas">
-            {['Equities', 'FX', 'Rates', 'Commodities', 'Credit', 'Macro'].map((item) => (
-              <span key={item}>{item}</span>
-            ))}
           </div>
 
           <div className="hero__links">
@@ -47,7 +41,7 @@ export default function Hero() {
             <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hero__link">
               LinkedIn
             </a>
-            <a href="/resume.pdf" download className="hero__link">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero__link">
               Resume
             </a>
           </div>
@@ -161,32 +155,6 @@ export default function Hero() {
           align-items: center;
           margin-bottom: 16px;
         }
-        .hero__market-strip {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px 16px;
-          margin-bottom: 24px;
-          color: var(--text-muted);
-          font-family: var(--font-mono);
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-        .hero__market-strip span {
-          position: relative;
-        }
-        .hero__market-strip span:not(:last-child)::after {
-          content: '';
-          position: absolute;
-          right: -9px;
-          top: 50%;
-          width: 2px;
-          height: 2px;
-          background: var(--green);
-          transform: translateY(-50%);
-          opacity: 0.65;
-        }
 
         /* Ghost links */
         .hero__links {
@@ -250,9 +218,9 @@ export default function Hero() {
           width: min(100%, 360px);
           aspect-ratio: 4 / 5;
           overflow: hidden;
-          border: 1px solid rgba(255,77,90,0.28);
+          border: 1px solid rgba(92,193,255,0.28);
           border-radius: 14px;
-          background: rgba(5,6,7,0.72);
+          background: rgba(4,10,24,0.72);
           box-shadow: 0 0 0 1px rgba(255,77,90,0.06), 0 24px 60px rgba(0,0,0,0.42);
         }
         .hero__portrait {
@@ -272,11 +240,6 @@ export default function Hero() {
           .hero__portrait-wrap { width: 100%; }
           .hero__portrait-frame { width: min(72vw, 300px); }
           .hero__tags { justify-content: center; }
-          .hero__market-strip { justify-content: center; }
-          .hero__ctas { justify-content: center; }
-          .hero__links { justify-content: center; }
-          .hero__stats { justify-content: center; }
-        }
         @media (max-width: 520px) {
           .hero__headline { font-size: 39px; }
           .hero__ctas { flex-direction: column; align-items: stretch; }
