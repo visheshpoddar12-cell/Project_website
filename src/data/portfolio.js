@@ -24,7 +24,6 @@ export const personal = {
 
 export const stats = [
   { value: "3.96", label: "GPA" },
-  { value: "10+", label: "Projects" },
   { value: "10+", label: "Stock Pitches" },
   { value: "3", label: "Internships" },
 ];
