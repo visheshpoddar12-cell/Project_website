@@ -68,7 +68,7 @@ export default function Navbar() {
                 <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setQuickOpen(false)}>
                   <span>LinkedIn</span><small>PROFILE</small>
                 </a>
-                <a href="/resume.pdf" download role="menuitem" onClick={() => setQuickOpen(false)}>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setQuickOpen(false)}>
                   <span>Resume</span><small>PDF</small>
                 </a>
               </div>

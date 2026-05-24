@@ -116,11 +116,11 @@ export default function Hero() {
           font-weight: 700;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: var(--text-muted);
+          color: var(--text);
           padding: 5px 12px;
-          border: 1px solid var(--border);
+          border: 1px solid rgba(255,255,255,0.14);
           border-radius: 4px;
-          background: rgba(11,15,16,0.72);
+          background: rgba(255,255,255,0.08);
           transition: all var(--transition);
         }
         .hero__tag:hover {

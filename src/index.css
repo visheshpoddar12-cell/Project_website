@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --bg:             #081B33;
-    --bg-2:           #0C254E;
-    --surface:        rgba(18,35,65,0.88);
-    --card:           rgba(15,27,58,0.94);
-    --card-hover:     rgba(18,39,73,0.96);
+    --bg:             #091C34;
+    --bg-2:           #0F2C55;
+    --surface:        rgba(255,255,255,0.06);
+    --card:           rgba(255,255,255,0.08);
+    --card-hover:     rgba(255,255,255,0.12);
 
-    --border:         rgba(142,175,222,0.14);
-    --border-subtle:  rgba(142,175,222,0.08);
-    --border-accent:  rgba(125,188,255,0.28);
-    --border-gold:    rgba(200,170,90,0.22);
+    --border:         rgba(255,255,255,0.16);
+    --border-subtle:  rgba(255,255,255,0.08);
+    --border-accent:  rgba(126,181,255,0.25);
+    --border-gold:    rgba(216,184,112,0.22);
 
     --cyan:           #7EB5FF;
     --cyan-light:     #C8DEFF;
-    --cyan-dim:       rgba(126,181,255,0.09);
-    --gold:           #C9B46F;
-    --gold-light:     #E5D19E;
-    --gold-dim:      rgba(201,180,111,0.12);
+    --cyan-dim:       rgba(126,181,255,0.1);
+    --gold:           #D4B66A;
+    --gold-light:     #F0DC9E;
+    --gold-dim:      rgba(212,182,106,0.14);
     --emerald:        #B3D7FF;
-    --green:          #91BFFF;
-    --rose:           #FFC481;
+    --green:          #A2CBFF;
+    --rose:           #FFD5B8;
 
-    --text:           #F8FAFF;
-    --text-2:         #D8E4FF;
-    --text-muted:     #B8C9E3;
-    --text-dim:       rgba(184,201,227,0.42);
+    --text:           #FDFEFF;
+    --text-2:         #E5EFFF;
+    --text-muted:     #C2D0E6;
+    --text-dim:       rgba(194,208,230,0.42);
 
-    --glow-cyan:      0 0 18px rgba(126,181,255,0.10), 0 0 34px rgba(128,195,255,0.05);
-    --glow-gold:      0 0 18px rgba(201,182,111,0.10);
-  --shadow:         0 20px 60px rgba(0,0,0,0.45);
-  --shadow-sm:      0 10px 34px rgba(0,0,0,0.34);
+    --glow-cyan:      0 0 18px rgba(126,181,255,0.10), 0 0 34px rgba(175,210,255,0.06);
+    --glow-gold:      0 0 18px rgba(212,182,106,0.08);
+  --shadow:         0 20px 60px rgba(2,12,32,0.4);
+  --shadow-sm:      0 10px 34px rgba(2,12,32,0.28);
 
   --font-sans:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:      'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -56,11 +56,11 @@ body {
   color: var(--text);
   background: var(--bg);
   background-image:
-    radial-gradient(circle at 20% 8%, rgba(126,181,255,0.10), transparent 26%),
-    radial-gradient(circle at 84% 14%, rgba(201,180,111,0.06), transparent 24%),
-    linear-gradient(180deg, rgba(126,181,255,0.08), transparent 58%),
-    linear-gradient(90deg, rgba(145,191,255,0.05), transparent 60%);
-  background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px;
+    radial-gradient(circle at 18% 10%, rgba(126,181,255,0.16), transparent 24%),
+    radial-gradient(circle at 82% 16%, rgba(212,182,106,0.08), transparent 20%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 68%),
+    linear-gradient(90deg, rgba(255,255,255,0.03), transparent 60%);
+  background-size: 100% 100%, 100% 100%, 88px 88px, 88px 88px;
   background-attachment: fixed;
   line-height: 1.6;
 }
@@ -94,7 +94,7 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
 }
 
 section { padding: 64px 0; }
-section.alt { background: rgba(11,15,16,0.58); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+section.alt { background: rgba(255,255,255,0.06); border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
 
 /* ─── Buttons ─── */
 .btn {

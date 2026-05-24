@@ -169,10 +169,10 @@ export default function Projects() {
           margin: 36px 0 30px;
         }
         .pitch-filter {
-          border: 1px solid rgba(166,179,173,0.18);
+          border: 1px solid rgba(255,255,255,0.14);
           border-radius: 999px;
-          background: rgba(13,17,23,0.82);
-          color: var(--text-muted);
+          background: rgba(255,255,255,0.06);
+          color: var(--text);
           padding: 11px 17px;
           font-family: var(--font-mono);
           font-size: 11.5px;
@@ -183,16 +183,16 @@ export default function Projects() {
           transition: color var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
         }
         .pitch-filter:hover {
-          border-color: rgba(0,229,200,0.34);
+          border-color: rgba(126,181,255,0.34);
           color: var(--cyan);
-          background: rgba(0,229,200,0.055);
+          background: rgba(126,181,255,0.12);
           transform: translateY(-1px);
         }
         .pitch-filter--active {
-          border-color: rgba(198,162,74,0.62);
+          border-color: rgba(212,182,106,0.52);
           color: var(--gold-light);
-          background: rgba(245,158,11,0.12);
-          box-shadow: inset 0 0 0 1px rgba(198,162,74,0.12), 0 0 20px rgba(198,162,74,0.07);
+          background: rgba(212,182,106,0.14);
+          box-shadow: inset 0 0 0 1px rgba(212,182,106,0.14), 0 0 18px rgba(212,182,106,0.06);
         }
         .pitch-grid {
           display: grid;
@@ -200,18 +200,16 @@ export default function Projects() {
           gap: 20px;
         }
 
-        .pitch-card {
+                .pitch-card {
           position: relative;
           display: flex;
           flex-direction: column;
           min-height: 286px;
           overflow: hidden;
-          border: 1px solid rgba(166,179,173,0.15);
-          border-radius: 6px;
-          background:
-            linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0)),
-            #0D1117;
-          box-shadow: 0 1px 0 rgba(255,255,255,0.03), 0 18px 38px rgba(0,0,0,0.18);
+          border: 1px solid rgba(255,255,255,0.14);
+          border-radius: 14px;
+          background: rgba(255,255,255,0.06);
+          box-shadow: 0 18px 40px rgba(0,0,0,0.09);
           transition: transform var(--transition), border-color var(--transition), background var(--transition);
         }
         .pitch-card::before {
@@ -230,24 +228,18 @@ export default function Projects() {
         .pitch-card--modeling::before {
           background: var(--rose);
         }
-        .pitch-card:hover {
+                .pitch-card:hover {
           transform: translateY(-2px);
-          border-color: rgba(6,182,212,0.42);
-          background:
-            linear-gradient(180deg, rgba(6,182,212,0.035), rgba(255,255,255,0)),
-            #090f20;
+          border-color: rgba(126,181,255,0.6);
+          background: rgba(255,255,255,0.14);
         }
-        .pitch-card--competition:hover {
-          border-color: rgba(245,158,11,0.42);
-          background:
-            linear-gradient(180deg, rgba(245,158,11,0.035), rgba(255,255,255,0)),
-            #090f20;
+                .pitch-card--competition:hover {
+          border-color: rgba(212,182,106,0.42);
+          background: rgba(255,255,255,0.16);
         }
-        .pitch-card--modeling:hover {
-          border-color: rgba(255,77,90,0.34);
-          background:
-            linear-gradient(180deg, rgba(255,77,90,0.03), rgba(255,255,255,0)),
-            #090f20;
+                .pitch-card--modeling:hover {
+          border-color: rgba(255,196,128,0.34);
+          background: rgba(255,255,255,0.16);
         }
         .pitch-card__body {
           position: relative;

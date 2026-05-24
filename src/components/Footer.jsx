@@ -22,7 +22,7 @@ export default function Footer() {
           ))}
           <a href={`mailto:${personal.email}`} className="footer__nav-link">Email</a>
           <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="footer__nav-link">LinkedIn</a>
-          <a href="/resume.pdf" download className="footer__nav-link">Resume</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="footer__nav-link">Resume</a>
         </nav>
 
         <p className="footer__copy">© {year} {personal.name}</p>
