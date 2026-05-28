@@ -116,9 +116,9 @@ export default function Research() {
           white-space: nowrap;
         }
         .research-card__date {
-          font-size: 12px;
-          color: var(--text-muted);
-          font-weight: 500;
+          font-size: 13px;
+          color: var(--gold-light);
+          font-weight: 700;
           white-space: nowrap;
         }
         .research-card__title {

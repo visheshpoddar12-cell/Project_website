@@ -7,7 +7,7 @@ const filters = [
   { key: 'equity', label: 'Equity Research' },
   { key: 'personal', label: 'Personal Pitches' },
   { key: 'competitions', label: 'Competitions' },
-  { key: 'modeling', label: 'M&A / Modeling' },
+  { key: 'modeling', label: 'Merger Model' },
 ];
 
 function PitchCard({ pitch }) {
@@ -319,12 +319,19 @@ export default function Projects() {
           border: 1px solid rgba(166,179,173,0.14);
           border-radius: 4px;
           background: rgba(255,255,255,0.018);
-          color: rgba(226,232,240,0.48);
+          color: var(--text-2);
           padding: 6px 9px;
           font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.02em;
+        }
+        /* Make the date/meta more readable and add a gold accent */
+        .pitch-card__meta-item:first-child {
+          color: var(--gold-light);
+          border-color: var(--border-gold);
+          background: rgba(212,182,106,0.04);
+          font-size: 12px;
         }
         .pitch-card__meta-item svg {
           color: var(--cyan);
@@ -358,8 +365,8 @@ export default function Projects() {
           flex-wrap: wrap;
           gap: 10px;
           padding: 18px 30px 24px;
-          border-top: 1px solid rgba(166,179,173,0.12);
-          background: rgba(2,6,18,0.22);
+          border-top: 1px solid rgba(166,179,173,0.14);
+          background: linear-gradient(180deg, rgba(2,6,18,0.28), rgba(2,6,18,0.18));
         }
         .pitch-card__link {
           display: inline-flex;
@@ -436,11 +443,11 @@ export default function Projects() {
           flex-direction: column;
           min-height: 220px;
           overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.12);
+          border: 1px solid rgba(255,255,255,0.08);
           border-radius: 14px;
-          background: rgba(255,255,255,0.06);
-          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
-          transition: transform var(--transition), border-color var(--transition), background var(--transition);
+          background: linear-gradient(180deg, rgba(3,8,20,0.62), rgba(6,12,28,0.5));
+          box-shadow: 0 20px 50px rgba(0,0,0,0.36);
+          transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
         }
         .other-card::before {
           content: '';
@@ -448,6 +455,16 @@ export default function Projects() {
           inset: 0 0 auto 0;
           height: 2px;
           background: rgba(0,229,200,0.4);
+        }
+        .other-card::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 10px;
+          bottom: 10px;
+          width: 4px;
+          border-radius: 6px;
+          background: linear-gradient(180deg, rgba(212,182,106,0.95), rgba(126,181,255,0.85));
         }
         .other-card {
           position: relative;
@@ -471,6 +488,11 @@ export default function Projects() {
           border-radius: 4px;
           width: fit-content;
           font-family: var(--font-mono);
+        }
+        .other-card__date {
+          color: var(--gold-light);
+          font-weight: 700;
+          margin: 10px 0 14px;
         }
         .other-card {
           position: relative;

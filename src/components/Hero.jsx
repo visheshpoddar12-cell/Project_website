@@ -20,7 +20,7 @@ export default function Hero() {
 
           <div className="hero__ctas">
             <a href="#projects" className="btn btn-primary">
-              View Research <ArrowRight size={15} />
+              VIEW PROJECTS <ArrowRight size={15} />
             </a>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light">
               <Download size={14} /> Resume
@@ -168,7 +168,7 @@ export default function Hero() {
           font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 500;
-          color: var(--text-muted);
+          color: var(--gold-light);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-top: 4px;

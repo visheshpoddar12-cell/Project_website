@@ -150,7 +150,7 @@ export const research = [
 
 export const stockPitches = [
   {
-    company: "ABM Industries",
+    company: "ABM Industries (NYSE: ABM)",
     category: "Equity Research Report",
     eyebrow: "Equity Research",
     filterGroup: "equity",
@@ -171,7 +171,7 @@ export const stockPitches = [
     position: "Honorable Mention (Top 70 out of 1400+)",
   },
   {
-    company: "Reitmans",
+    company: "Reitmans (TSX: RET)",
     category: "Personal Stock Pitch",
     eyebrow: "Personal Pitch",
     filterGroup: "personal",
@@ -180,7 +180,7 @@ export const stockPitches = [
     position: "",
   },
   {
-    company: "Parker Hannifin",
+    company: "Parker Hannifin (NYSE: PH)",
     category: "Personal Stock Pitch",
     eyebrow: "Personal Pitch",
     filterGroup: "personal",
@@ -189,7 +189,7 @@ export const stockPitches = [
     position: "",
   },
   {
-    company: "Canada Goose",
+    company: "Canada Goose (NYSE: GOOS)",
     category: "Personal Stock Pitch",
     eyebrow: "Personal Pitch",
     filterGroup: "personal",
@@ -198,7 +198,7 @@ export const stockPitches = [
     position: "",
   },
   {
-    company: "Levi's",
+    company: "Levi's (NYSE: LEVI)",
     category: "Stock Pitch Competition",
     eyebrow: "Competition",
     filterGroup: "competitions",
@@ -207,7 +207,7 @@ export const stockPitches = [
     position: "Pre-finalist",
   },
   {
-    company: "ASML",
+    company: "ASML (NASDAQ: ASML)",
     category: "Stock Pitch Competition",
     eyebrow: "Competition",
     filterGroup: "competitions",
@@ -216,7 +216,7 @@ export const stockPitches = [
     position: "",
   },
   {
-    company: "Canadian National Railway",
+    company: "Canadian National Railway (TSX: CNR)",
     category: "Personal Stock Pitch",
     eyebrow: "Personal Pitch",
     filterGroup: "personal",
@@ -225,7 +225,7 @@ export const stockPitches = [
     position: "",
   },
   {
-    company: "Iron Mountain",
+    company: "Iron Mountain (NYSE: IRM)",
     category: "Stock Pitch Competition",
     eyebrow: "Competition",
     filterGroup: "competitions",
@@ -234,7 +234,7 @@ export const stockPitches = [
     position: "Top 5 Finalist (only team of 1st year students to reach there)",
   },
   {
-    company: "Comcast",
+    company: "Comcast (NASDAQ: CMCSA)",
     category: "Personal Stock Pitch",
     eyebrow: "Personal Pitch",
     filterGroup: "personal",
@@ -244,7 +244,7 @@ export const stockPitches = [
   },
   {
     company: "Deckers / Crocs M&A Model",
-    category: "M&A / Modeling",
+    category: "Merger Model",
     eyebrow: "Model",
     filterGroup: "modeling",
     links: [
@@ -310,7 +310,6 @@ export const skills = {
     "Jupyter Notebooks",
   ],
   "Statistical Methods": [
-    "Econometrics",
     "OLS Regression",
     "Time Series Analysis",
     "Monte Carlo Simulation",

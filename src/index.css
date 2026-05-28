@@ -220,7 +220,7 @@ section.alt { background: rgba(255,255,255,0.04); border-top: 1px solid rgba(255
 .glass-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; backdrop-filter: blur(8px); transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition); }
 .glass-card:hover {
   border-color: var(--border-accent);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), 0 0 18px rgba(212,182,106,0.06);
   transform: translateY(-1px);
 }
 
