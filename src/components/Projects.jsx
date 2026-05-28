@@ -322,16 +322,18 @@ export default function Projects() {
           color: var(--text-2);
           padding: 10px 12px;
           font-family: var(--font-mono);
-          font-size: 16px;
-          font-weight: 700;
           letter-spacing: 0.03em;
+          font-weight: 700;
         }
-        /* Make the date/meta more readable and add a gold accent */
         .pitch-card__meta-item:first-child {
+          font-size: 18px;
           color: var(--gold-light);
           border-color: var(--border-gold);
           background: rgba(212,182,106,0.04);
-          font-size: 12px;
+        }
+        .pitch-card__meta-item:last-child {
+          font-size: 14px;
+          color: rgba(226,232,240,0.76);
         }
         .pitch-card__meta-item svg {
           color: var(--cyan);
@@ -441,13 +443,14 @@ export default function Projects() {
           position: relative;
           display: flex;
           flex-direction: column;
-          min-height: 220px;
+          min-height: 240px;
           overflow: hidden;
           border: 1px solid rgba(212,182,106,0.32);
           border-radius: 18px;
           background: linear-gradient(180deg, rgba(4,10,22,0.95), rgba(10,18,34,0.88));
           box-shadow: 0 28px 72px rgba(0,0,0,0.42);
           transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+          padding: 28px 30px 28px;
         }
         .other-card::before {
           content: '';
