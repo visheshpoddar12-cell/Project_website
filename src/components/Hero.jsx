@@ -107,10 +107,11 @@ export default function Hero() {
         .hero__subtitle {
           max-width: 640px;
           margin-bottom: 18px;
-          color: var(--text-2);
+          color: var(--gold-light);
           font-size: 17px;
-          line-height: 1.55;
-          letter-spacing: 0.01em;
+          line-height: 1.9;
+          letter-spacing: 0.02em;
+          text-shadow: 0 0 16px rgba(212,182,106,0.12);
         }
 
         /* CTAs */

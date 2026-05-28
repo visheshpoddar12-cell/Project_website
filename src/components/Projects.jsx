@@ -31,11 +31,11 @@ function PitchCard({ pitch }) {
 
         <div className="pitch-card__meta">
           <span className="pitch-card__meta-item">
-            <CalendarDays size={13} />
+            <CalendarDays size={16} />
             {pitch.date}
           </span>
           <span className="pitch-card__meta-item">
-            <FileText size={13} />
+            <FileText size={16} />
             {pitch.category}
           </span>
         </div>
@@ -76,7 +76,7 @@ const tagColorMap = {
 
 function OtherCard({ work }) {
   return (
-    <div className="other-card glass-card">
+    <div className="other-card">
       <div className={`other-card__tag ${tagColorMap[work.tagColor] || ''}`}>{work.tag}</div>
       <h3 className="other-card__title">{work.title}</h3>
       <p className="other-card__date">{work.date}</p>
@@ -315,16 +315,16 @@ export default function Projects() {
         .pitch-card__meta-item {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
-          border: 1px solid rgba(166,179,173,0.14);
-          border-radius: 4px;
-          background: rgba(255,255,255,0.018);
+          gap: 8px;
+          border: 1px solid rgba(166,179,173,0.20);
+          border-radius: 5px;
+          background: rgba(255,255,255,0.08);
           color: var(--text-2);
-          padding: 6px 9px;
+          padding: 10px 12px;
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size: 16px;
           font-weight: 700;
-          letter-spacing: 0.02em;
+          letter-spacing: 0.03em;
         }
         /* Make the date/meta more readable and add a gold accent */
         .pitch-card__meta-item:first-child {
@@ -443,10 +443,10 @@ export default function Projects() {
           flex-direction: column;
           min-height: 220px;
           overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 14px;
-          background: linear-gradient(180deg, rgba(3,8,20,0.62), rgba(6,12,28,0.5));
-          box-shadow: 0 20px 50px rgba(0,0,0,0.36);
+          border: 1px solid rgba(212,182,106,0.32);
+          border-radius: 18px;
+          background: linear-gradient(180deg, rgba(4,10,22,0.95), rgba(10,18,34,0.88));
+          box-shadow: 0 28px 72px rgba(0,0,0,0.42);
           transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
         }
         .other-card::before {
@@ -454,7 +454,7 @@ export default function Projects() {
           position: absolute;
           inset: 0 0 auto 0;
           height: 2px;
-          background: rgba(0,229,200,0.4);
+          background: rgba(212,182,106,0.85);
         }
         .other-card::after {
           content: '';
@@ -466,17 +466,23 @@ export default function Projects() {
           border-radius: 6px;
           background: linear-gradient(180deg, rgba(212,182,106,0.95), rgba(126,181,255,0.85));
         }
-        .other-card {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          min-height: 220px;
-          overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 14px;
-          background: rgba(255,255,255,0.06);
-          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
-          transition: transform var(--transition), border-color var(--transition), background var(--transition);
+        .other-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 32px 88px rgba(0,0,0,0.46);
+          border-color: rgba(212,182,106,0.55);
+        }
+        .other-card__title {
+          font-size: 18px;
+          line-height: 1.35;
+          color: #ffffff;
+          margin: 14px 0 10px;
+          max-width: 100%;
+        }
+        .other-card__desc {
+          color: rgba(226,232,240,0.84);
+          line-height: 1.8;
+          margin-bottom: 18px;
+          font-size: 14px;
         }
         .other-card__tag {
           display: inline-block;
@@ -493,18 +499,6 @@ export default function Projects() {
           color: var(--gold-light);
           font-weight: 700;
           margin: 10px 0 14px;
-        }
-        .other-card {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          min-height: 220px;
-          overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 14px;
-          background: rgba(255,255,255,0.06);
-          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
-          transition: transform var(--transition), border-color var(--transition), background var(--transition);
         }
         .other-link {
           display: inline-flex;
