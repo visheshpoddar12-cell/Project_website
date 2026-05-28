@@ -326,13 +326,13 @@ export default function Projects() {
           font-weight: 700;
         }
         .pitch-card__meta-item:first-child {
-          font-size: 18px;
+          font-size: 14px;
           color: var(--gold-light);
           border-color: var(--border-gold);
           background: rgba(212,182,106,0.04);
         }
         .pitch-card__meta-item:last-child {
-          font-size: 14px;
+          font-size: 11px;
           color: rgba(226,232,240,0.76);
         }
         .pitch-card__meta-item svg {
@@ -436,21 +436,22 @@ export default function Projects() {
         /* ═══ Other Work ═══ */
         .other-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(2, minmax(380px, 1fr));
+          gap: 28px;
+          justify-items: stretch;
         }
         .other-card {
           position: relative;
           display: flex;
           flex-direction: column;
-          min-height: 240px;
+          min-height: 260px;
           overflow: hidden;
           border: 1px solid rgba(212,182,106,0.32);
           border-radius: 18px;
-          background: linear-gradient(180deg, rgba(4,10,22,0.95), rgba(10,18,34,0.88));
-          box-shadow: 0 28px 72px rgba(0,0,0,0.42);
+          background: linear-gradient(180deg, rgba(4,10,22,0.96), rgba(10,18,34,0.92));
+          box-shadow: 0 34px 80px rgba(0,0,0,0.44);
           transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
-          padding: 28px 30px 28px;
+          padding: 30px 34px;
         }
         .other-card::before {
           content: '';
@@ -477,31 +478,37 @@ export default function Projects() {
         .other-card__title {
           font-size: 18px;
           line-height: 1.35;
-          color: #ffffff;
-          margin: 14px 0 10px;
+          color: rgba(255,255,255,0.92);
+          margin: 10px 0 10px;
           max-width: 100%;
         }
-        .other-card__desc {
-          color: rgba(226,232,240,0.84);
-          line-height: 1.8;
+        .other-card__date {
+          color: rgba(255,255,255,0.65);
+          font-size: 14px;
           margin-bottom: 18px;
+        }
+        .other-card__desc {
+          color: rgba(226,232,240,0.78);
+          line-height: 1.85;
+          margin-bottom: 24px;
           font-size: 14px;
         }
         .other-card__tag {
-          display: inline-block;
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0.22em;
           text-transform: uppercase;
-          padding: 4px 10px;
-          border-radius: 4px;
+          padding: 10px 14px;
+          border-radius: 999px;
           width: fit-content;
           font-family: var(--font-mono);
-        }
-        .other-card__date {
+          background: rgba(212,182,106,0.16);
           color: var(--gold-light);
-          font-weight: 700;
-          margin: 10px 0 14px;
+          border: 1px solid rgba(212,182,106,0.35);
+          margin-bottom: 24px;
         }
         .other-link {
           display: inline-flex;
