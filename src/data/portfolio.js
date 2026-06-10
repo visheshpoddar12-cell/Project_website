@@ -10,7 +10,7 @@ export const personal = {
   degree: "Rotman Commerce · Finance and Economics",
   graduation: "2028",
   gpa: "3.96",
-  location: "New York, NY",
+  location: "Toronto, Canada",
   heroHeadline: "Quantitative Thinking at the Intersection of Finance and Data.",
   heroSub:
     "Incoming third-year Rotman Commerce student specializing in Finance and Economics with a Focus in Data Science, actively following markets and building investment research.",
