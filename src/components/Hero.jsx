@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Mail } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { personal, stats } from '../data/portfolio';
 import headshotPng from '../../headshot.png';
 
@@ -22,9 +22,6 @@ export default function Hero() {
             <a href="#projects" className="btn btn-primary">
               VIEW PROJECTS <ArrowRight size={15} />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-light">
-              <Download size={14} /> Resume
-            </a>
           </div>
 
           <div className="hero__links">
@@ -33,9 +30,6 @@ export default function Hero() {
             </a>
             <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="hero__link">
               LinkedIn
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero__link">
-              Resume
             </a>
           </div>
 

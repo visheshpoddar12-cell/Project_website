@@ -1,4 +1,4 @@
-import { Download, FileText, RefreshCw } from 'lucide-react';
+import { FileText, RefreshCw } from 'lucide-react';
 
 export default function Resume() {
   return (
@@ -20,12 +20,9 @@ export default function Resume() {
             </span>
           </div>
           <div className="resume__actions">
-            <a href="/resume.pdf" download className="btn btn-primary">
-              <Download size={15} /> Download PDF
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-              View Online
-            </a>
+            <div className="btn btn-primary" aria-hidden>
+              Download PDF (removed)
+            </div>
           </div>
           <div className="resume__note">
             For finance and consulting roles, I am happy to tailor the resume to emphasize relevant experience. Reach out via the contact section.
@@ -55,9 +52,9 @@ export default function Resume() {
             ))}
           </div>
           <div className="resume__overlay">
-            <a href="/resume.pdf" download className="btn btn-primary">
-              <Download size={15} /> Download Resume
-            </a>
+            <div className="btn btn-primary" aria-hidden>
+              Download Resume (removed)
+            </div>
           </div>
         </div>
       </div>
