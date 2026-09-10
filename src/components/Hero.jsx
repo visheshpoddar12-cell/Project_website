@@ -15,7 +15,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__subtitle">
-            Markets • Sales &amp; Trading • Equity Research • Data-Driven Strategy
+            Markets • Trading • Sales • Research • Investments • Finance • Data-Driven Strategy
           </p>
 
           <div className="hero__ctas">
